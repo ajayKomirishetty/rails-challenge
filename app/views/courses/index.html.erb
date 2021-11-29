@@ -1,0 +1,22 @@
+<h1 class='page-header mb-3'>Courses</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Number of Lessons</th>
+      <th scope="col">Number of Assignments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <th scope="row"><%= course.id %></th>
+        <td><%= link_to course.name, course %></td>
+        <td><%= course.lessons.size %></td>
+        <td><%= course.assignments.size %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
